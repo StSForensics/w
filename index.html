@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O4M: open tests for checking AI records from outside</title>
+<meta name="description" content="Public requirements that let people outside a company check whether an AI system's records are complete for the scope it declared and have not been altered. Published by STS Forensics Ltd.">
+<meta property="og:title" content="O4M: open tests for checking AI records from outside">
+<meta property="og:description" content="Public requirements for checking, from outside, whether an AI system's records are complete for the declared scope and unaltered.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <a class="brand" href="/" aria-label="STS Forensics, home">
+    <img src="assets/logo.jpg" alt="StS Forensics" width="427" height="320">
+  </a>
+  <nav aria-label="Main">
+    <a href="#try">Try it</a>
+    <a href="#why">Why now</a>
+    <a href="#work">The work</a>
+    <a href="#contact">Work with us</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Can anyone outside the company check what an AI system did?</h1>
+    <p class="lede">AI agents now act on people's behalf, and when something goes wrong the evidence is usually a log. We write public requirements for checking those logs from outside: is the record complete for the scope the operator declared, and has it been altered?</p>
+    <p class="actions">
+      <a class="btn primary" href="https://doi.org/10.5281/zenodo.23857888">Read the draft requirements</a>
+      <a class="btn" href="#comment">Send a comment by 1 December 2026</a>
+    </p>
+  </div>
+
+  <figure class="ledger" id="ledger" aria-labelledby="ledger-cap">
+    <div class="ledger-head">
+      <span>Log export from the operator</span>
+      <button type="button" id="run" class="check">Run outside check</button>
+    </div>
+    <ol class="rows" id="rows" aria-live="polite"></ol>
+    <p class="verdict" id="verdict" role="status">The operator says this export is complete. Run the check to see.</p>
+    <figcaption id="ledger-cap">Illustration with made-up events. Not output from the O4M verifier.</figcaption>
+  </figure>
+</section>
+
+<section class="wrap" id="try">
+  <h2>Try it yourself</h2>
+  <p class="intro">Two free exercises, about two to five minutes each. No sign-up, no tracking, nothing uploaded.</p>
+  <div class="games">
+    <div class="game">
+      <h3><a href="https://stsforensics.github.io/ask-the-record/">Ask the Record</a></h3>
+      <p>Pick the seat you sit in: a user, a company, an engineer, a regulator, an insurer or an auditor. Answer two questions about an AI agent's record. About two minutes each.</p>
+      <p class="short">Short address: atr.o4m.ai</p>
+    </div>
+    <div class="game">
+      <h3><a href="https://stsforensics.github.io/ask-the-record/find-the-gap.html">Find the Gap</a></h3>
+      <p>Check the activity log of a warehouse delivery agent in three rounds. Find out what a seal can show and what only an outside witness can. About five minutes.</p>
+      <p class="short">Short address: ftg.o4m.ai</p>
+    </div>
+  </div>
+  <p class="note">Both are available in English, German, Spanish, French, Japanese and Chinese (traditional for Hong Kong and Taiwan, and simplified). English is the version of record. The other seven versions are machine translations that native speakers have not yet checked. The cases are invented, and the exercises are not products, certificates or advice.</p>
+</section>
+
+<section class="band" id="why">
+  <div class="wrap two">
+    <h2>Why now</h2>
+    <div class="prose">
+      <p>For products placed on the EU market after 9 December 2026, the revised Product Liability Directive expects courts to be able to order disclosure of relevant evidence. If a defendant fails to disclose it, the product can be presumed defective (Article 10(2)(a)).</p>
+      <p>Our review of EU and UK rules found that, outside financial services, no binding instrument we reviewed clearly requires AI logs to be kept so that an outsider can detect alteration or omission.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="work">
+  <h2>The work</h2>
+  <ul class="works">
+    <li>
+      <div class="w-main">
+        <h3><a href="https://doi.org/10.5281/zenodo.23857888">O4M Record Tests 2026, v1.0: requirements C1 to C23</a></h3>
+        <p>A draft specification, not a finished test suite, and it issues no certificates. Public comment draft, CC BY 4.0.</p>
+      </div>
+      <p class="w-date">1 November 2026</p>
+    </li>
+    <li>
+      <div class="w-main">
+        <h3><a href="https://doi.org/10.5281/zenodo.24122592">Demonstration code and test vectors</a></h3>
+        <p>A verifier and frozen test vectors for the draft. Comments are logged as GitHub Issues on the <a href="https://github.com/StSForensics/o4m-record-tests">repository</a>.</p>
+      </div>
+      <p class="w-date">12 November 2026</p>
+    </li>
+    <li>
+      <div class="w-main">
+        <h3><a href="https://doi.org/10.5281/zenodo.23546436">Can strangers check what an AI system did? AI Records Gap Brief v1.7, with evidence table v3.3</a></h3>
+        <p>A review of EU and UK rules on whether outsiders can check AI records. CC BY 4.0. Corrections are published as new versions and earlier versions stay online.</p>
+      </div>
+      <p class="w-date">22 October 2026</p>
+    </li>
+    <li>
+      <div class="w-main">
+        <h3><a href="https://ai.o4m.ai">The O4M Dispatch</a></h3>
+        <p>Written analysis from the same work.</p>
+      </div>
+      <p class="w-date">Ongoing</p>
+    </li>
+  </ul>
+</section>
+
+<section class="band" id="comment">
+  <div class="wrap two">
+    <h2>Comment on the draft</h2>
+    <div class="prose">
+      <p>Comments on O4M Record Tests 2026 are open until 1 December 2026. Write to <a href="mailto:comments@sts-forensics.com?subject=O4M%20Record%20Tests">comments@sts-forensics.com</a> with the subject line "O4M Record Tests", or open an issue on the repository for the code and vectors.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap two" id="contact">
+  <h2>Work with us</h2>
+  <div class="prose">
+    <p>If your firm needs AI records checked, wants these requirements built into a product or policy, or is hiring for this kind of work, write to <a href="mailto:work@o4m.ai">work@o4m.ai</a>.</p>
+    <p>The requirements are public and the same for everyone, so paid work never changes what they say.</p>
+  </div>
+</section>
+
+<section class="wrap two" id="who">
+  <h2>Who is behind it</h2>
+  <div class="prose">
+    <p>Gareth Wong, founder of STS Forensics Ltd. Invited Expert to ETSI TC SAI #11, February 2026. Author of the two records above (ORCID <a href="https://orcid.org/0009-0007-8958-4776">0009-0007-8958-4776</a>).</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>STS Forensics Ltd. Registered in England and Wales, company number 17054694.</p>
+    <p>Published research is CC BY 4.0 unless stated otherwise. The exercises are Apache-2.0. Page last updated 19 November 2026.</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
