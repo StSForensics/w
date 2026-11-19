@@ -70,6 +70,10 @@ h3{font-weight:500;font-size:1.25rem;line-height:1.3}
 #try .intro{margin:.75rem 0 2rem;max-width:38rem;color:var(--ink-2)}
 .games{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(2rem,5vw,4rem)}
 .game{border-top:2px solid var(--gold);padding:1.1rem 0 .5rem}
+.tile{display:block;margin-bottom:1rem;border-radius:4px;overflow:hidden;outline-offset:3px;transition:box-shadow .2s}
+.tile:hover{box-shadow:0 0 0 3px var(--gold)}
+.tile svg{display:block;width:100%;height:auto}
+.game .short a{color:var(--bronze)}
 .game h3 a{color:var(--ink);text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:.2em}
 .game h3 a:hover{color:var(--bronze)}
 .game p{margin:.5rem 0 0;max-width:30rem}
@@ -103,6 +107,7 @@ h3{font-weight:500;font-size:1.25rem;line-height:1.3}
   .row .t{display:none}
 }
 @media (prefers-reduced-motion:reduce){
+  .tile{transition:none}
   html{scroll-behavior:auto}
   .row{transition:none}
 }
