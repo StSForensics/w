@@ -8,6 +8,14 @@
 <meta property="og:title" content="O4M: open tests for checking AI records from outside">
 <meta property="og:description" content="Public requirements for checking, from outside, whether an AI system's records are complete for the declared scope and unaltered.">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="STS Forensics">
+<meta property="og:url" content="https://sts-forensics.com/">
+<meta property="og:image" content="https://sts-forensics.com/assets/og.png">
+<meta property="og:image:alt" content="STS Forensics: can anyone outside the company check what an AI system did?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#152941">
+<link rel="canonical" href="https://sts-forensics.com/">
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,7 +111,15 @@
     <h2>Why now</h2>
     <div class="prose">
       <p>For products placed on the EU market after 9 December 2026, the revised Product Liability Directive expects courts to be able to order disclosure of relevant evidence. If a defendant fails to disclose it, the product can be presumed defective (Article 10(2)(a)).</p>
-      <p>Our review of EU and UK rules found that, outside financial services, no binding instrument we reviewed clearly requires AI logs to be kept so that an outsider can detect alteration or omission.</p>
+      <p>Binding logging duties exist, for example EU AI Act Article 12 for high-risk systems. <a href="https://doi.org/10.5281/zenodo.23546436">Our review</a> found that, outside financial services, none of the binding EU and UK instruments reviewed clearly requires records an outsider can check for alteration or omission. Logging standards are in progress (ISO/IEC 24970 and prEN 18229-1) and we are comparing them.</p>
+      <aside class="limits" aria-labelledby="limits-h">
+        <h3 id="limits-h">Limits</h3>
+        <ul>
+          <li>Completeness is measured within a declared, independently observable boundary.</li>
+          <li>An omitted event cannot be found from the record alone.</li>
+          <li>Results state what stayed unobservable.</li>
+        </ul>
+      </aside>
     </div>
   </div>
 </section>
@@ -151,11 +167,20 @@
   </div>
 </section>
 
+<section class="wrap two" id="researchers">
+  <h2>For researchers and standards bodies</h2>
+  <div class="prose">
+    <p>Current version: O4M Record Tests 2026, v1.0, published 1 November 2026. Cite it by DOI: <a href="https://doi.org/10.5281/zenodo.23857888">10.5281/zenodo.23857888</a>. The review behind the Why now section is AI Records Gap Brief v1.7 with evidence table v3.3, published 22 October 2026: <a href="https://doi.org/10.5281/zenodo.23546436">10.5281/zenodo.23546436</a>.</p>
+    <p>Comment by email to <a href="mailto:comments@sts-forensics.com?subject=O4M%20Record%20Tests">comments@sts-forensics.com</a> with the subject line "O4M Record Tests", or open an issue on the <a href="https://github.com/StSForensics/o4m-record-tests">repository</a>. Comments and replies are published in a comment log.</p>
+  </div>
+</section>
+
 <section class="wrap two" id="contact">
   <h2>Work with us</h2>
   <div class="prose">
     <p>If your firm needs AI records checked, wants these requirements built into a product or policy, or is hiring for this kind of work, write to <a href="mailto:work@o4m.ai">work@o4m.ai</a>.</p>
     <p>The requirements are public and the same for everyone, so paid work never changes what they say.</p>
+    <p>STS may sell implementation and investigation services. It will not certify anyone against requirements it wrote, and the requirements stay public.</p>
   </div>
 </section>
 
@@ -171,7 +196,7 @@
 <footer class="foot">
   <div class="wrap">
     <p>STS Forensics Ltd. Registered in England and Wales, company number 17054694.</p>
-    <p>Published research is CC BY 4.0 unless stated otherwise. The exercises are Apache-2.0. Page last updated 19 November 2026.</p>
+    <p>Published research is CC BY 4.0 unless stated otherwise. The exercises are Apache-2.0. Page last updated 20 November 2026.</p>
   </div>
 </footer>
 

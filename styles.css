@@ -66,6 +66,10 @@ h3{font-weight:500;font-size:1.25rem;line-height:1.3}
 .prose{max-width:38rem}
 .prose p{margin:0 0 1rem}
 .prose p:last-child{margin-bottom:0}
+.limits{margin:1.5rem 0 0;padding:1rem 1.25rem 1.1rem;background:var(--paper);border-left:4px solid var(--gold);border-radius:0 3px 3px 0}
+.limits h3{font-size:1.1rem;margin:0 0 .4rem}
+.limits ul{margin:0;padding-left:1.1rem}
+.limits li{margin:.25rem 0}
 
 #try .intro{margin:.75rem 0 2rem;max-width:38rem;color:var(--ink-2)}
 .games{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(2rem,5vw,4rem)}
