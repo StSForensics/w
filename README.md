@@ -1,4 +1,4 @@
-# STS Forensics and O4M public website
+# StS Forensics and O4M public website
 
 Source for the public site at https://stsforensics.github.io/w/
 
@@ -14,12 +14,12 @@ Open index.html in a browser, or run `python3 -m http.server` in this folder. Th
 
 - Code: Apache-2.0 (see LICENSE).
 - Written content: CC BY 4.0 (see LICENSE-CONTENT).
-- The STS Forensics and O4M names and logos are not licensed for reuse.
+- The StS Forensics and O4M names and logos are not licensed for reuse.
 
 ## Ownership
 
-- The site text and code: Copyright (c) 2026 STS Forensics Ltd (company number 17054694).
-- The O4M Record Tests vectors and verifier (repository StSForensics/o4m-record-tests) are copyright Gareth Wong, not STS Forensics Ltd. See that repository for its own notice.
+- The site text and code: Copyright (c) 2026 StS Forensics Ltd (company number 17054694).
+- The O4M Record Tests vectors and verifier (repository StSForensics/o4m-record-tests) are copyright Gareth Wong, not StS Forensics Ltd. See that repository for its own notice.
 
 ## Comments on O4M Record Tests 2026
 
