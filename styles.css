@@ -66,7 +66,7 @@ h3{font-weight:500;font-size:1.25rem;line-height:1.3}
 .prose{max-width:38rem}
 .prose p{margin:0 0 1rem}
 .prose p:last-child{margin-bottom:0}
-.limits{margin:1.5rem 0 0;padding:1rem 1.25rem 1.1rem;background:var(--paper);border-left:4px solid var(--gold);border-radius:0 3px 3px 0}
+.limits{max-width:38rem;margin:1.75rem 0 0;padding:1rem 1.25rem 1.1rem;background:var(--paper);border-left:4px solid var(--gold);border-radius:0 3px 3px 0}
 .limits h3{font-size:1.1rem;margin:0 0 .4rem}
 .limits ul{margin:0;padding-left:1.1rem}
 .limits li{margin:.25rem 0}
