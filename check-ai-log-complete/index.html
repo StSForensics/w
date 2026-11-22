@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How can an outsider check that an AI log is complete?</title>
+<meta name="description" content="A hash seal shows a log was not altered, not that it is complete. Completeness needs a declared boundary and an independent reference. A short explanation with an example.">
+<meta property="og:title" content="How can an outsider check that an AI log is complete?">
+<meta property="og:description" content="A hash seal shows a log was not altered, not that it is complete. Completeness needs a declared boundary and an independent reference. A short explanation with an example.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StS Forensics">
+<meta property="og:url" content="https://stsforensics.github.io/w/check-ai-log-complete/">
+<meta property="og:image" content="https://stsforensics.github.io/w/assets/og.png">
+<meta property="og:image:alt" content="StS Forensics: can anyone outside the company check what an AI system did?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#152941">
+<link rel="canonical" href="https://stsforensics.github.io/w/check-ai-log-complete/">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "How can an outsider check that an AI log is complete?", "description": "A hash seal shows a log was not altered, not that it is complete. Completeness needs a declared boundary and an independent reference. A short explanation with an example.", "url": "https://stsforensics.github.io/w/check-ai-log-complete/", "mainEntityOfPage": "https://stsforensics.github.io/w/check-ai-log-complete/", "datePublished": "2026-11-22", "dateModified": "2026-11-22", "inLanguage": "en-GB", "image": "https://stsforensics.github.io/w/assets/og.png", "author": {"@type": "Person", "name": "Gareth Wong", "sameAs": "https://orcid.org/0009-0007-8958-4776"}, "publisher": {"@type": "Organization", "name": "StS Forensics Ltd", "url": "https://stsforensics.github.io/w/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "O4M", "item": "https://stsforensics.github.io/w/"}, {"@type": "ListItem", "position": 2, "name": "How can an outsider check that an AI log is complete?", "item": "https://stsforensics.github.io/w/check-ai-log-complete/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../" aria-label="StS Forensics, home">
+    <img src="../assets/logo.jpg" alt="StS Forensics" width="427" height="320">
+  </a>
+  <nav aria-label="Main">
+    <a href="../#try">Try it</a>
+    <a href="../#why">Why now</a>
+    <a href="../#work">The work</a>
+    <a href="../#contact">Work with us</a>
+  </nav>
+</header>
+<main id="main">
+<article class="wrap article">
+<p class="crumb"><a href="../">O4M</a> / How can an outsider check that an AI log is complete?</p>
+<h1>How can an outsider check that an AI log is complete?</h1>
+
+<p class="answer">An outsider can check that an AI log is complete only against a declared boundary that the outsider can observe independently of the operator. A seal or hash chain shows that entries were not changed afterwards. It cannot show that an event which never reached the record is missing, so completeness needs a second, independent reference.</p>
+
+<h2>Unaltered is not the same as complete</h2>
+<p>Two different questions are easy to mix up. Has the record been altered since it was written? And is everything that should be in the record actually there? Sealing entries with hashes answers the first. The second needs something outside the record to compare against.</p>
+
+<h2>A made-up example</h2>
+<p>An operator exports the activity log of a delivery agent. The entries are numbered 01, 02, 03 and 05, and each entry is linked to the one before it. An outsider can see that entry 04 is missing, because the numbering has a hole. That gap is detectable from the record alone.</p>
+<p>Now suppose the agent opened a door and the action was never written to the log at all, so there is no entry 04 and no hole. The record looks tidy and the seal holds. Only a second source, such as a door sensor kept by someone else, can show the event happened. The events in this example are invented.</p>
+
+<h2>What an outsider needs</h2>
+<ul>
+  <li>A declared boundary: the operator states which actions, systems and time span the record is meant to cover.</li>
+  <li>A boundary that is independently observable: someone other than the operator can see at least some of what crosses it.</li>
+  <li>An independent reference to compare against, such as a counterpart's record or a physical sensor.</li>
+  <li>A result that says what stayed unobservable, instead of a bare pass.</li>
+</ul>
+<p>The draft <a href="https://doi.org/10.5281/zenodo.23857888">O4M Record Tests 2026</a> (requirements C1 to C23, public comment draft) sets out requirements for this kind of check. It is a draft and it issues no certificates.</p>
+
+<h2>Why it matters now</h2>
+<p>For products placed on the EU market on or after 9 December 2026, the revised Product Liability Directive expects courts to be able to order disclosure of relevant evidence. If a defendant fails to disclose it, the product can be presumed defective (Article 10(2)(a)).</p>
+<p>Binding logging duties exist, for example EU AI Act Article 12 for high-risk systems, which now apply from 2 December 2027 for stand-alone systems and 2 August 2028 for systems embedded in regulated products. <a href="https://doi.org/10.5281/zenodo.23546436">Our review</a> found that, outside financial services, none of the binding EU and UK instruments reviewed clearly requires records an outsider can check for alteration or omission. Logging standards are in progress (ISO/IEC 24970 and prEN 18229-1) and, as at 20 November 2026, our comparison of them is not finished.</p>
+
+<h2>Try it</h2>
+<p><a href="../exercises/">Find the Gap</a> walks through a warehouse delivery agent's log in three rounds and shows what a seal can show and what only an outside witness can.</p>
+
+<h2>Sources</h2>
+<ul>
+  <li>O4M Record Tests 2026, v1.0: <a href="https://doi.org/10.5281/zenodo.23857888">10.5281/zenodo.23857888</a></li>
+  <li>AI Records Gap Brief v1.7, evidence table v3.3: <a href="https://doi.org/10.5281/zenodo.23546436">10.5281/zenodo.23546436</a></li>
+</ul>
+
+<p class="stamp">Page last updated 22 November 2026. Published by StS Forensics Ltd. Text CC BY 4.0.</p>
+</article>
+<section class="band">
+  <div class="wrap article">
+    <h2>Read next</h2>
+    <ul class="next"><li><a href="../exercises/">Ask the Record and Find the Gap: free exercises</a></li><li><a href="../what-is-o4m/">What is O4M?</a></li><li><a href="../">O4M home: requirements, evidence and how to comment</a></li></ul>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p>StS Forensics Ltd. Registered in England and Wales, company number 17054694.</p>
+    <p>Published research is CC BY 4.0 unless stated otherwise. The exercises are Apache-2.0.</p>
+  </div>
+</footer>
+</body>
+</html>
