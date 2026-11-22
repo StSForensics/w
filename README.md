@@ -2,9 +2,17 @@
 
 Source for the public site at https://stsforensics.github.io/w/
 
+## Try the exercises
+
+Click a picture to open the exercise. Both are free, take two to five minutes, and need no sign-up.
+
+[![Ask the Record: six seats around one record, with a question moving from seat to seat](assets/atr.gif)](https://stsforensics.github.io/ask-the-record/)
+
+[![Find the Gap: a numbered log with entry 4 missing and a magnifying glass finding the gap](assets/ftg.gif)](https://stsforensics.github.io/ask-the-record/find-the-gap.html)
+
 ## What this is
 
-One static page (index.html, styles.css, app.js, assets/) presenting O4M Record Tests 2026 v1.0 and the two free exercises, Ask the Record and Find the Gap. The page has no sign-up and no uploads. It loads its fonts from Google Fonts. app.js drives the small illustration at the top, which uses made-up events and is not output from the O4M verifier.
+One static page with three explainer pages (index.html, styles.css, app.js, assets/) presenting O4M Record Tests 2026 v1.0 and the two free exercises, Ask the Record and Find the Gap. The page has no sign-up and no uploads. It loads its fonts from Google Fonts. app.js drives the small illustration at the top, which uses made-up events and is not output from the O4M verifier.
 
 ## Preview
 
