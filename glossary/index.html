@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary: declared scope, independent source, declared gap</title>
+<meta name="description" content="Plain-words definitions of the terms used in the O4M Record Tests: declared scope, independent source, declared gap, profile and HOLD.">
+<meta property="og:title" content="Glossary: declared scope, independent source, declared gap">
+<meta property="og:description" content="Plain-words definitions of the terms used in the O4M Record Tests: declared scope, independent source, declared gap, profile and HOLD.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StS Forensics">
+<meta property="og:url" content="https://stsforensics.github.io/w/glossary/">
+<meta property="og:image" content="https://stsforensics.github.io/w/assets/og.png">
+<meta property="og:image:alt" content="StS Forensics: can anyone outside the company check what an AI system did?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#152941">
+<link rel="canonical" href="https://stsforensics.github.io/w/glossary/">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Glossary: declared scope, independent source, declared gap", "description": "Plain-words definitions of the terms used in the O4M Record Tests: declared scope, independent source, declared gap, profile and HOLD.", "url": "https://stsforensics.github.io/w/glossary/", "mainEntityOfPage": "https://stsforensics.github.io/w/glossary/", "datePublished": "2026-11-27", "dateModified": "2026-11-27", "inLanguage": "en-GB", "image": "https://stsforensics.github.io/w/assets/og.png", "author": {"@type": "Person", "name": "Gareth Wong", "sameAs": "https://orcid.org/0009-0007-8958-4776"}, "publisher": {"@type": "Organization", "name": "StS Forensics Ltd", "url": "https://stsforensics.github.io/w/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "O4M", "item": "https://stsforensics.github.io/w/"}, {"@type": "ListItem", "position": 2, "name": "Glossary: declared scope, independent source, declared gap", "item": "https://stsforensics.github.io/w/glossary/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../" aria-label="StS Forensics, home">
+    <img src="../assets/logo.jpg" alt="StS Forensics" width="427" height="320">
+  </a>
+  <nav aria-label="Main">
+    <a href="../#try">Try it</a>
+    <a href="../#why">Why now</a>
+    <a href="../#work">The work</a>
+    <a href="../#contact">Work with us</a>
+  </nav>
+</header>
+<main id="main">
+<article class="wrap article">
+<p class="crumb"><a href="../">O4M</a> / Glossary: declared scope, independent source, declared gap</p>
+<h1>Glossary: declared scope, independent source, declared gap</h1>
+
+<p class="answer">These are the terms the O4M Record Tests use, in plain words. Each one comes from the published draft.</p>
+
+<h2>Declared scope</h2>
+<p>The actions, systems and time span the operator says its record is meant to cover, written down and sealed before the first event (requirement C1). Every result prints the scope it was checked against. Completeness is only ever measured inside it.</p>
+
+<h2>Independent source</h2>
+<p>A record the operator does not control, such as a payment processor's record of an effect, a provider's usage figures, or a physical sensor. It counts as independent only if the checker gets it from whoever produced it, or it carries that producer's signature under a key the operator does not hold. A copy inside the operator's own export is labelled unverified.</p>
+
+<h2>Declared gap and undeclared gap</h2>
+<p>A declared gap is a period, event type, channel or field the operator says it does not capture. It is reported as a declared gap, never as a pass. A gap the checker finds that was not declared is an undeclared gap, and it fails.</p>
+
+<h2>Profile</h2>
+<p>Because few organisations can meet every requirement, each result names a profile. W is for people using a vendor's admin export, F is for organisations running their own agents, and P would need providers to sign usage receipts.</p>
+
+<h2>HOLD</h2>
+<p>A result that is neither pass nor fail because something the test needs does not exist yet, such as an independent time stamp or a third-party count. A HOLD comes with reason codes that say what is missing.</p>
+
+<h2>Unaltered and complete</h2>
+<p>Two different questions. <a href="../unaltered-vs-complete-ai-logs/">Unaltered is not the same as complete</a> explains the difference with an example.</p>
+
+<h2>Source</h2>
+<p>O4M Record Tests 2026, v1.0: <a href="https://doi.org/10.5281/zenodo.23857888">10.5281/zenodo.23857888</a>. <a href="../record-tests-2026/">The requirements in plain English.</a></p>
+
+<p class="stamp">Page last updated 27 November 2026. Published by StS Forensics Ltd. Text CC BY 4.0.</p>
+</article>
+<section class="band">
+  <div class="wrap article">
+    <h2>Read next</h2>
+    <ul class="next"><li><a href="../record-tests-2026/">O4M Record Tests 2026 in plain English</a></li><li><a href="../unaltered-vs-complete-ai-logs/">Unaltered is not the same as complete</a></li><li><a href="../what-is-o4m/">What is O4M?</a></li></ul>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p>StS Forensics Ltd. Registered in England and Wales, company number 17054694.</p>
+    <p>Published research is CC BY 4.0 unless stated otherwise. The exercises are Apache-2.0.</p>
+  </div>
+</footer>
+</body>
+</html>

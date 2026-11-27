@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unaltered is not the same as complete: AI logs explained</title>
+<meta name="description" content="An AI log can be intact but missing events, or complete but altered. Two short invented cases show why hashing alone cannot show omission.">
+<meta property="og:title" content="Unaltered is not the same as complete: AI logs explained">
+<meta property="og:description" content="An AI log can be intact but missing events, or complete but altered. Two short invented cases show why hashing alone cannot show omission.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StS Forensics">
+<meta property="og:url" content="https://stsforensics.github.io/w/unaltered-vs-complete-ai-logs/">
+<meta property="og:image" content="https://stsforensics.github.io/w/assets/og.png">
+<meta property="og:image:alt" content="StS Forensics: can anyone outside the company check what an AI system did?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#152941">
+<link rel="canonical" href="https://stsforensics.github.io/w/unaltered-vs-complete-ai-logs/">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Unaltered is not the same as complete: AI logs explained", "description": "An AI log can be intact but missing events, or complete but altered. Two short invented cases show why hashing alone cannot show omission.", "url": "https://stsforensics.github.io/w/unaltered-vs-complete-ai-logs/", "mainEntityOfPage": "https://stsforensics.github.io/w/unaltered-vs-complete-ai-logs/", "datePublished": "2026-11-27", "dateModified": "2026-11-27", "inLanguage": "en-GB", "image": "https://stsforensics.github.io/w/assets/og.png", "author": {"@type": "Person", "name": "Gareth Wong", "sameAs": "https://orcid.org/0009-0007-8958-4776"}, "publisher": {"@type": "Organization", "name": "StS Forensics Ltd", "url": "https://stsforensics.github.io/w/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "O4M", "item": "https://stsforensics.github.io/w/"}, {"@type": "ListItem", "position": 2, "name": "Unaltered is not the same as complete: AI logs explained", "item": "https://stsforensics.github.io/w/unaltered-vs-complete-ai-logs/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../" aria-label="StS Forensics, home">
+    <img src="../assets/logo.jpg" alt="StS Forensics" width="427" height="320">
+  </a>
+  <nav aria-label="Main">
+    <a href="../#try">Try it</a>
+    <a href="../#why">Why now</a>
+    <a href="../#work">The work</a>
+    <a href="../#contact">Work with us</a>
+  </nav>
+</header>
+<main id="main">
+<article class="wrap article">
+<p class="crumb"><a href="../">O4M</a> / Unaltered is not the same as complete: AI logs explained</p>
+<h1>Unaltered is not the same as complete: AI logs explained</h1>
+
+<p class="answer">An AI log can be unaltered but incomplete, or complete but altered. Hashing and signing guard against alteration. Only an independent reference can show that an event never reached the record.</p>
+
+<h2>Case one: intact, but missing events</h2>
+<p>A delivery agent's log is exported with entries 01, 02, 03 and 05, each linked to the one before. The seal holds and an outsider can see the hole where entry 04 should be. Now suppose the agent opened a door and nothing was written at all. There is no entry 04 and no hole. The log is intact and still incomplete. A door sensor kept by someone else is what shows it. The events are invented.</p>
+
+<h2>Case two: complete, but altered</h2>
+<p>Another log has every entry from 01 to 05, but entry 03 was edited after the fact. Because each entry carries the hash of the one before, the edit breaks the link at entry 04, and a chain check notices. A careful tamperer would recompute every later entry so the links look fine again. A chain check alone passes that log. What catches it is a checkpoint that was time-stamped by an outside party before the edit. The events are invented.</p>
+
+<h2>Why hashing alone cannot show omission</h2>
+<p>A hash proves that what is in the record is what was written. It says nothing about what was never written. To judge completeness you need a declared boundary (what the record is meant to cover) and a second source that sits outside the operator's control.</p>
+
+<h2>Two limits we publish</h2>
+<p>Our own test vectors keep these cases on purpose. A full rewrite from the point of tampering passes the chain walk. And an operator that consistently under-reports what it received still has counters that balance. Both need a reference outside the operator, such as a count from the provider.</p>
+
+<h2>Try it</h2>
+<p><a href="../exercises/">Find the Gap</a> lets you check a warehouse agent's log in three rounds and see what a seal can show and what only an outside witness can.</p>
+
+<h2>Sources</h2>
+<ul>
+  <li>O4M Record Tests 2026, v1.0: <a href="https://doi.org/10.5281/zenodo.23857888">10.5281/zenodo.23857888</a></li>
+  <li>Test vectors, with the known limits kept as vectors: <a href="https://github.com/StSForensics/o4m-record-tests">github.com/StSForensics/o4m-record-tests</a></li>
+</ul>
+
+<p class="stamp">Page last updated 27 November 2026. Published by StS Forensics Ltd. Text CC BY 4.0.</p>
+</article>
+<section class="band">
+  <div class="wrap article">
+    <h2>Read next</h2>
+    <ul class="next"><li><a href="../check-ai-log-complete/">How can an outsider check that an AI log is complete?</a></li><li><a href="../exercises/">Ask the Record and Find the Gap: free exercises</a></li><li><a href="../record-tests-2026/">O4M Record Tests 2026 in plain English</a></li></ul>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p>StS Forensics Ltd. Registered in England and Wales, company number 17054694.</p>
+    <p>Published research is CC BY 4.0 unless stated otherwise. The exercises are Apache-2.0.</p>
+  </div>
+</footer>
+</body>
+</html>

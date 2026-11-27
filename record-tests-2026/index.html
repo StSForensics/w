@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O4M Record Tests 2026: the requirements C1 to C23 in plain English</title>
+<meta name="description" content="O4M Record Tests 2026 v1.0 is a public comment draft of 23 requirements for checking AI records from outside. Six themes explained, with status, limits and how to comment.">
+<meta property="og:title" content="O4M Record Tests 2026: the requirements C1 to C23 in plain English">
+<meta property="og:description" content="O4M Record Tests 2026 v1.0 is a public comment draft of 23 requirements for checking AI records from outside. Six themes explained, with status, limits and how to comment.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="StS Forensics">
+<meta property="og:url" content="https://stsforensics.github.io/w/record-tests-2026/">
+<meta property="og:image" content="https://stsforensics.github.io/w/assets/og.png">
+<meta property="og:image:alt" content="StS Forensics: can anyone outside the company check what an AI system did?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#152941">
+<link rel="canonical" href="https://stsforensics.github.io/w/record-tests-2026/">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "O4M Record Tests 2026: the requirements C1 to C23 in plain English", "description": "O4M Record Tests 2026 v1.0 is a public comment draft of 23 requirements for checking AI records from outside. Six themes explained, with status, limits and how to comment.", "url": "https://stsforensics.github.io/w/record-tests-2026/", "mainEntityOfPage": "https://stsforensics.github.io/w/record-tests-2026/", "datePublished": "2026-11-27", "dateModified": "2026-11-27", "inLanguage": "en-GB", "image": "https://stsforensics.github.io/w/assets/og.png", "author": {"@type": "Person", "name": "Gareth Wong", "sameAs": "https://orcid.org/0009-0007-8958-4776"}, "publisher": {"@type": "Organization", "name": "StS Forensics Ltd", "url": "https://stsforensics.github.io/w/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "O4M", "item": "https://stsforensics.github.io/w/"}, {"@type": "ListItem", "position": 2, "name": "O4M Record Tests 2026: the requirements C1 to C23 in plain English", "item": "https://stsforensics.github.io/w/record-tests-2026/"}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="../" aria-label="StS Forensics, home">
+    <img src="../assets/logo.jpg" alt="StS Forensics" width="427" height="320">
+  </a>
+  <nav aria-label="Main">
+    <a href="../#try">Try it</a>
+    <a href="../#why">Why now</a>
+    <a href="../#work">The work</a>
+    <a href="../#contact">Work with us</a>
+  </nav>
+</header>
+<main id="main">
+<article class="wrap article">
+<p class="crumb"><a href="../">O4M</a> / O4M Record Tests 2026: the requirements in plain English</p>
+<h1>O4M Record Tests 2026: the requirements in plain English</h1>
+
+<p class="answer">O4M Record Tests 2026 (v1.0) is a public comment draft of 23 requirements, C1 to C23, for checking from outside whether an AI system's activity records are complete for the scope the operator declared and have not been altered. It checks records. It does not check whether the AI system was right, safe or lawful. At this release no system can pass every in-scope requirement.</p>
+
+<h2>Key facts</h2>
+<dl class="facts">
+  <dt>Version</dt><dd>v1.0, a specification in development, not an implementation-ready test suite.</dd>
+  <dt>Published</dt><dd>1 November 2026.</dd>
+  <dt>Comments close</dt><dd>1 December 2026. <a href="../comment-on-o4m-record-tests/">How to comment.</a></dd>
+  <dt>Licence</dt><dd>CC BY 4.0.</dd>
+  <dt>DOI</dt><dd><a href="https://doi.org/10.5281/zenodo.23857888">10.5281/zenodo.23857888</a></dd>
+  <dt>Editor</dt><dd>Gareth Wong.</dd>
+</dl>
+
+<h2>The requirements in six themes</h2>
+<h3>1. Declare before you start (C1)</h3>
+<p>Before the first event, the operator writes down which policy, software, failure mode, checkpoint interval, clock tolerance and witnesses apply, which actions count as consequential, and seals that record. Without a declared scope there is nothing to check completeness against.</p>
+<h3>2. Make each record checkable (C2 to C5)</h3>
+<p>One agreed way to encode records so that anyone can recompute the hashes (C2). Numbered entries, each linked to the one before (C3). Salted commitments to inputs, outputs and tool calls, with the payloads held apart (C4). A signature on every record, with the key held apart from the application (C5).</p>
+<h3>3. Pin records in time and watch for forks (C6, C15, C16, C19)</h3>
+<p>Periodic checkpoints, time-stamped by an outside source and cosigned by witnesses (C6). A declared time tolerance (C15). Verifiers compare checkpoints, so nobody can show different histories to different people (C16). Rules for what happens when time sources are unavailable (C19).</p>
+<h3>4. Who and what acted (C7 to C10, C13)</h3>
+<p>Model identity reported on a ladder, from "someone said so" to hardware-attested (C7). Runtime attestation (C8). Authority records that trace an action to a named human or role (C9). Key issue, revocation and rotation logged (C10). Agents that spawn agents are registered at start and end (C13).</p>
+<h3>5. Did capture miss anything (C14, C17, C18, C22)</h3>
+<p>Signed counters of records received, accepted and dropped, checked against the provider's own usage figures where they exist (C14). An execution witness, compared with an independent record of the effect, such as a payment processor's (C17). Sealing before an external effect, not after (C18). A heartbeat, a rule that consequential actions wait if capture stops, and a coverage statement that shows when capture was live, degraded or absent (C22).</p>
+<h3>6. Hand over, and check the checker (C11, C12, C20, C21, C23)</h3>
+<p>An export bundle with proofs of inclusion (C11). Retention declared, and deletion only as a signed, logged event (C12). An open, reproducible verifier (C20). Verifier independence and samples drawn with public randomness (C21). Keys held outside the operator's reach, and agreement between independent verifiers (C23).</p>
+
+<h2>Three profiles</h2>
+<p>Few organisations can meet all 23, so every result names a profile. Profile W is for anyone using AI through a vendor that offers an admin export: it shows the records have not changed since the verifier received them, and cannot show they were complete at source. Profile F is for organisations that run their own agents on infrastructure they control. Profile P would need model providers to sign per-request usage receipts, which nobody offers today.</p>
+
+<h2>Where it stands</h2>
+<p>The editor has run the tests for C2, C3, C5, C11 and C18 on synthetic records, and parts of C6, C14 and C16. No result has been reproduced by anyone outside the editor. A verifier and frozen test vectors for the chain walk (T3, requirement C3) and for counters balancing (T14a, requirement C14) are in the <a href="https://github.com/StSForensics/o4m-record-tests">public repository</a>.</p>
+<p>Results are PASS, FAIL or HOLD. A HOLD with reason codes is a useful result: it says what is still missing. Every result is unsigned, and the suite issues no certificates.</p>
+
+<h2>Limits we publish</h2>
+<ul>
+  <li>A chain walk alone cannot detect a record that is altered with every later record recomputed. External commitments are needed for that.</li>
+  <li>If an operator consistently under-reports what it received, the counters still balance. Only a count the operator does not control can show it.</li>
+  <li>The tests check the record, not the decision the AI made.</li>
+</ul>
+
+<h2>Sources</h2>
+<ul>
+  <li>O4M Record Tests 2026, v1.0: <a href="https://doi.org/10.5281/zenodo.23857888">10.5281/zenodo.23857888</a></li>
+  <li>Test vectors and verifier: <a href="https://github.com/StSForensics/o4m-record-tests">github.com/StSForensics/o4m-record-tests</a></li>
+</ul>
+
+<p class="stamp">Page last updated 27 November 2026. Published by StS Forensics Ltd. Text CC BY 4.0.</p>
+</article>
+<section class="band">
+  <div class="wrap article">
+    <h2>Read next</h2>
+    <ul class="next"><li><a href="../what-is-o4m/">What is O4M?</a></li><li><a href="../check-ai-log-complete/">How can an outsider check that an AI log is complete?</a></li><li><a href="../comment-on-o4m-record-tests/">How to comment on the O4M Record Tests</a></li></ul>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p>StS Forensics Ltd. Registered in England and Wales, company number 17054694.</p>
+    <p>Published research is CC BY 4.0 unless stated otherwise. The exercises are Apache-2.0.</p>
+  </div>
+</footer>
+</body>
+</html>
